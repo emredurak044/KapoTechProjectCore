@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+@await Html.PartialAsync("/Views/LayoutPartial/_HeaderPartial.cshtml")</head>
+
+<body>
+    @await Html.PartialAsync("/Views/LayoutPartial/_NavbarPartial.cshtml")
+
+    @RenderBody()
+    <!-- ***** Preloader Start ***** -->
+    @await Html.PartialAsync("/Views/LayoutPartial/_FooterPartial.cshtml")
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    @await Html.PartialAsync("/Views/LayoutPartial/_ScriptPartial.cshtml")
+
+</body>
+
+</html>

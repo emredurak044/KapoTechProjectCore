@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            @await Component.InvokeAsync("_GetWeather")
+
+            <div class="col-md-6 grid-margin transparent">
+                <div class="row">
+                    @await Component.InvokeAsync("_ServiceCounter")
+                    @await Component.InvokeAsync("_TeamCounter")
+                   
+                </div>
+                <div class="row">
+                    @await Component.InvokeAsync("_ProjectCounter")
+                    <div class="col-md-6 stretch-card transparent">
+                        <div class="card card-light-danger">
+                            <div class="card-body">
+                                <p class="mb-4">Number of Clients</p>
+                                <p class="fs-30 mb-2">47033</p>
+                                <p>0.22% (30 days)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @await Component.InvokeAsync("_AdminProjectList")
+        @await Component.InvokeAsync("_AdminTeamsList")
+    </div>
+</div>
+s

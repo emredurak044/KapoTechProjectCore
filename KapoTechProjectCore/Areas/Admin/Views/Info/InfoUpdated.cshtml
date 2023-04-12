@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model Info
+@{
+    ViewData["Title"] = "InfoUpdated";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Info Update</h4>
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(model => model.InfoID)
+                <div class="form-group">
+                    <label>Info Name</label>
+                    <input type="text" class="form-control" placeholder="Info Name" name="InfoName" value="@Model.InfoName">
+                    <span asp-validation-for="InfoName" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Info Skill</label>
+                    <input type="text" class="form-control" placeholder="InfoSkill" name="InfoSkill" value="@Model.InfoSkill">
+                    <span asp-validation-for="InfoSkill" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-check form-check-flat form-check-primary">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="Status" value="@Model.Status">
+                        Status
+                        <i class="input-helper"></i>
+                    </label>                    <span asp-validation-for="Status" class="text-danger"></span>
+
+                </div>
+                <input type="submit" class="btn btn-primary mr-2" value="Submit" />
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
